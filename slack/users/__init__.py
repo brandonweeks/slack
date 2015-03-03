@@ -32,7 +32,17 @@ def getPresence(user):
     }
 
     return slack.http_client.get('users.getPresence', params)
+    
+def info(user):
+    """
+    This method returns information about a team member.
+    """
+    params = { 
+        'token': slack.api_token,
+        'user': user,
+    }
 
+    return slack.http_client.get('users.info', params)
 
 def list():
     """
